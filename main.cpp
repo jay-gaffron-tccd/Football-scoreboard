@@ -127,8 +127,12 @@ int main()
       cout << "C = Update Home Team's Coach Name" << endl;
       cout << "D = Update Home Team's Home City" << endl;
       cout << "E = Update Home Team's Timeout Count" << endl;
-      cout << " = Update Home Status" << endl; 
-      cout << " = Update Visting Team Coach" << endl; 
+      cout << "F = Update Visiting Team Name" << endl; 
+      cout << "G = Update Visiting Team Score" << endl; 
+      cout << "H = Update Visiting Team's Coach Name" << endl;
+      cout << "I = Update Visiting Team's Home City" << endl;
+      cout << "J = Update Visiting Team's Timeout Count" << endl;
+      cout << " = Update Home Status" << endl;
       cout << " = Exit" << endl;
       cout << "\n>"; 
       cin >> userChoice; 
@@ -144,32 +148,69 @@ int main()
       }
       else if(userChoice == "B" || userChoice == "b")
       {
-        cout << "\nUpdate Home Score Module****" << endl; 
+        cout << "\nUpdate Home Team Score Module****" << endl; 
         cout << "\nPlease enter a new score for the home team: "; 
         cin >> newScore; 
         tOne.setScore(newScore);  //set the new score for tOne        
       }
       else if(userChoice == "C" || userChoice == "c")
       {
-          cout << "\nUpdate Home Coach Module****" << endl; 
-          cout << "\nPlease enter the Home coach Name: "; 
+          cout << "\nUpdate Home Team Score Module****" << endl;
+          cout << "\nPlease enter the home coach name: "; 
           cin >> newCoachName; 
           tOne.setCoachName(newCoachName); 
       }
       else if(userChoice == "D" || userChoice == "d")
       {
-          cout << "\nUpdate Home Team Home City Module****" << endl; 
-          cout << "\nPlease enter the Home city Name: "; 
+          cout << "\nUpdate Home Team Score Module****" << endl; 
+          cout << "\nPlease enter the home city name: "; 
           cin >> newHomeCity; 
           tOne.setHomeCity(newHomeCity); 
       }
       else if(userChoice == "E" || userChoice == "e")
       {
-          cout << "\nUpdate Home Timeout Module****" << endl; 
+          cout << "\nUpdate Home Team Score Module****" << endl; 
           cout << "\nPlease enter the new home team timeout count: "; 
           cin >> timeoutUpdate; 
           tOne.setTimeoutCount(timeoutUpdate); 
       } 
+      if(userChoice == "F" || userChoice == "f")
+      {
+        //Dr_T challenge Accept a new name for s's home team
+        cout << "****Update Visiting Team Score module*** " << endl; 
+        cout << "\nPlease enter a new name for the visiting team: ";
+        cin >> newName; 
+        //change that visiting team's default name
+        tTwo.setName(newName); //set tTwo's data to the new desired name
+      }
+      else if(userChoice == "G" || userChoice == "g")
+      {
+        cout << "****Update Visiting Team Score module*** " << endl; 
+        cout << "\nPlease enter a new score for the visiting team: "; 
+        cin >> newScore; 
+        tTwo.setScore(newScore);  //set the new score for tTwo        
+      }
+      else if(userChoice == "H" || userChoice == "h")
+      {
+          cout << "****Update Visiting Team Score module*** " << endl; 
+          cout << "\nPlease enter the visiting coach name: "; 
+          cin >> newCoachName; 
+          tTwo.setCoachName(newCoachName); 
+      }
+      else if(userChoice == "I" || userChoice == "i")
+      {
+          cout << "****Update Visiting Team Score module*** " << endl; 
+          cout << "\nPlease enter the visiting city name: "; 
+          cin >> newHomeCity; 
+          tTwo.setHomeCity(newHomeCity); 
+      }
+      else if(userChoice == "J" || userChoice == "j")
+      {
+          cout << "****Update Visiting Team Score module*** " << endl;
+          cout << "\nPlease enter the new visiting team timeout count: "; 
+          cin >> timeoutUpdate; 
+          tTwo.setTimeoutCount(timeoutUpdate); 
+      }
       else if(userChoice == "X" || userChoice == "x")
       {
         cout << "\nUpdate Home Status Module****" << endl;
