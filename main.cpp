@@ -25,7 +25,7 @@ class Team
         score = 0; 
         homeStatus = false; //visitor = false, home = true
         name = "DefaultTeamName"; 
-        timeoutCount = 0; 
+        timeoutCount = 3; 
         coachName = "DefaultCoachName";
         homeCity = "DefaultHomeCity"; 
       }
@@ -65,15 +65,14 @@ class Scoreboard
       string color = ""; 
       string reset = "\x1b[0m";
       color = "\x1b[34;4m"; //blue :) 
-      string score = "\x1b[32;1m"; //score color 
       cout << color << "\t\t\tFootball Scoreboard" << reset << endl; 
       cout << home.getName() << setw(30) << visitor.getName() << endl; 
-      cout << "\t\t" << score << home.getScore() << reset << setw(30) << visitor.getScore() << endl; 
-      cout << score << home.getCoachName() << reset << setw(30) << visitor.getCoachName() << endl; 
+      cout << "\t\t" << home.getScore() << reset << setw(30) << visitor.getScore() << endl; 
+      cout << home.getCoachName() << reset << setw(30) << visitor.getCoachName() << endl; 
       cout << home.getHomeCity() << setw(30) << visitor.getHomeCity() << endl;
       cout << "  Timeouts: " << home.getTimeoutCount() << setw(30) << "Timeouts: " << visitor.getTimeoutCount() << endl;
       cout << "\t\t\t Current quarter: " << getQuarter() << endl;
-      for(int i = 0; i < 47; i++) { cout << "*"; } cout << endl;
+      for(int i = 0; i < 47; i++) { cout << color << "*"; } cout << reset << endl;
        
        //proces to show the home team status
        cout << "Home > \t"; 
@@ -103,7 +102,7 @@ int main()
   string userChoice = ""; 
   string newCoachName = ""; 
   string newHomeCity = "";
-  int timeoutUpdate = 0;
+  int timeoutUpdate = 3;
   int quarterUpdate = 0;
   int homeTeamQuestion = 0; 
   int newScore = 0; 
@@ -122,18 +121,18 @@ int main()
       system("clear"); //clear the screen of previous content 
       s.showScoreboard(); //show the current scoreboard data
       //menu choices 
-      cout << "A = Update Home Team Name" << endl; 
+      cout << "\nA = Update Home Team Name" << endl; 
       cout << "B = Update Home Team Score" << endl; 
       cout << "C = Update Home Team's Coach Name" << endl;
       cout << "D = Update Home Team's Home City" << endl;
       cout << "E = Update Home Team's Timeout Count" << endl;
-      cout << "F = Update Visiting Team Name" << endl; 
+      cout << "\nF = Update Visiting Team Name" << endl; 
       cout << "G = Update Visiting Team Score" << endl; 
       cout << "H = Update Visiting Team's Coach Name" << endl;
       cout << "I = Update Visiting Team's Home City" << endl;
       cout << "J = Update Visiting Team's Timeout Count" << endl;
-      cout << " = Update Home Status" << endl;
-      cout << " = Exit" << endl;
+      cout << "\n\nT = Update Home Status" << endl;
+      cout << "\nX = Exit" << endl;
       cout << "\n>"; 
       cin >> userChoice; 
 
@@ -211,7 +210,7 @@ int main()
           cin >> timeoutUpdate; 
           tTwo.setTimeoutCount(timeoutUpdate); 
       }
-      else if(userChoice == "X" || userChoice == "x")
+      else if(userChoice == "T" || userChoice == "t")
       {
         cout << "\nUpdate Home Status Module****" << endl;
         cout << "\nWho is the home team: 1 = T1, 2 = T2: ";
@@ -233,7 +232,7 @@ int main()
           sleep(2); 
         }
       }
-      else if(userChoice == "F" || userChoice == "f")
+      else if(userChoice == "X" || userChoice == "x")
       {
         cout << "Exit chosen." << endl; 
       }
@@ -246,7 +245,7 @@ int main()
       s.setHome(tOne); //refresh the data in s to the new updates...
       s.setVisitor(tTwo); //refresh the data
   
-  }while(userChoice != "F" && userChoice != "f");
+  }while(userChoice != "X" && userChoice != "x");
 
 
   return 0; 
